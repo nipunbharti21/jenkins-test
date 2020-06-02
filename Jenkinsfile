@@ -16,7 +16,7 @@ pipeline {
 
 		stage("Completion") {
 			steps {
-				echo  "Build result: ${currentBuild.result} for ${currentBuild.projectName}"
+				echo  "Build result: ${currentBuild.currentResult} for ${currentBuild.projectName}"
 			}
 		}
 	}
