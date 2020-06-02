@@ -2,15 +2,21 @@ pipeline {
 	agent any
 
 	stages {
-		stage('Build') {
+		stage("Build") {
 			steps {
-				sh 'rm -rf node_modules && npm install'
+				sh "rm -rf node_modules && npm install"
 			}
 		}
 
-		stage('Test') {
+		stage("Test") {
 			steps {
-				sh 'npm run test'
+				sh "npm run test"
+			}
+		}
+
+		stage("Completion") {
+			steps {
+				echo  "Build result: ${currentBuild.result} for ${currentBuild.projectName}"
 			}
 		}
 	}
