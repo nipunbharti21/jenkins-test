@@ -16,7 +16,7 @@ pipeline {
 
 		stage("Completion") {
 			steps {
-				echo  "Build result: ${currentBuild.currentResult} for ${currentBuild.projectName}"
+				echo  "Build result: ${currentBuild.currentResult} for ${currentBuild.projectName} and it was triggered because of this push!"
 			}
 		}
 	}
