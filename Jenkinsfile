@@ -22,7 +22,7 @@ pipeline {
 
 		stage("Check") {
 			steps {
-				sh "echo ${env}"
+				sh "printenv"
 			}
 		}
 	}
