@@ -20,9 +20,12 @@ pipeline {
 			}
 		}
 
-		stage("Check") {
+		stage("Record Coverage") {
 			steps {
-				sh "printenv"
+				script {
+					currentBuild.result = 'SUCCESS'
+				}
+				step([$class: 'MasterCoverageAction', publishResultAs: 'statusCheck', scmVars: [GIT_URL: env.GIT_URL]])
 			}
 		}
 	}
