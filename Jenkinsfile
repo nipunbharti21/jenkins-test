@@ -16,7 +16,7 @@ pipeline {
 
 		stage("Completion") {
 			steps {
-				echo "Build result: ${currentBuild.currentResult} for ${currentBuild.projectName} and it was triggered because of this push"
+				echo "Build result: ${currentBuild.currentResult} for ${currentBuild.projectName}, changes made in ${env.GIT_BRANCH}"
 			}
 		}
 
